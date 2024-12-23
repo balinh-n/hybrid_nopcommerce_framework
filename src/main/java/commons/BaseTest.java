@@ -9,8 +9,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseTest {
-
-    public WebDriver getBrowserDriver(WebDriver driver, String browserName) {
+    WebDriver driver;
+    protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         if (browserList == BrowserList.CHROME) {
             driver = new ChromeDriver();
@@ -23,7 +23,7 @@ public class BaseTest {
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
-        driver.get("https://localhost:5001/");
+        driver.get(url);
         return driver;
     }
 
