@@ -1,4 +1,4 @@
-package pageUIs.users;
+package pageUIs;
 
 public class LoginPageUI {
     public static final String EMAIL_TXT = "//input[@class='email']";
@@ -8,9 +8,4 @@ public class LoginPageUI {
 
     public static final String EMAIL_ERROR = "//span[@id='Email-error']";
     public static final String INVALIDCREDENTIAL_MESSAGE = "//div[@class='message-error validation-summary-errors']";
-
-
-    public static final String DYNAMIC_EMAIL_TXT = "id=Email";
-    public static final String DYNAMIC_PASSWORD_TXT = "id=Password";
-    public static final String DYNAMIC_LOGIN_BUTTON = "css=.button-1.login-button";
 }
