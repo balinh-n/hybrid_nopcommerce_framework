@@ -1,4 +1,4 @@
-package pageUIs.users;
+package pageUIs.nopcommerce.users;
 
 public class MyAccountSideBarPageUI {
     public static final String CUSTOMERINFO_LINK = "//div[@class='listbox']//a[text() = 'Customer info']";

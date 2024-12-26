@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.nopcommerce.PageGenerateManager;
-import pageUIs.users.LoginPageUI;
+import pageUIs.nopcommerce.users.LoginPageUI;
 
 public class LoginPageObject extends BasePage {
 

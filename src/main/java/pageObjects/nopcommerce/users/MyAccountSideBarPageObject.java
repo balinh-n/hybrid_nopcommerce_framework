@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.nopcommerce.PageGenerateManager;
-import pageUIs.users.MyAccountSideBarPageUI;
+import pageUIs.nopcommerce.users.MyAccountSideBarPageUI;
 
 public class MyAccountSideBarPageObject extends BasePage {
     WebDriver driver;

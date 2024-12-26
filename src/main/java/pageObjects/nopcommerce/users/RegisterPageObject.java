@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageObjects.nopcommerce.PageGenerateManager;
-import pageUIs.users.RegisterPageUI;
+import pageUIs.nopcommerce.users.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
 

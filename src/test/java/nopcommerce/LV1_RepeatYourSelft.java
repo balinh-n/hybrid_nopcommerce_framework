@@ -10,8 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageUIs.users.HomePageUI;
-import pageUIs.users.RegisterPageUI;
+import pageUIs.nopcommerce.users.HomePageUI;
+import pageUIs.nopcommerce.users.RegisterPageUI;
 
 public class LV1_RepeatYourSelft {
 

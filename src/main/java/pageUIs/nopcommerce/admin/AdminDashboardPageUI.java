@@ -1,4 +1,4 @@
-package pageUIs.admin;
+package pageUIs.nopcommerce.admin;
 
 public class AdminDashboardPageUI {
 

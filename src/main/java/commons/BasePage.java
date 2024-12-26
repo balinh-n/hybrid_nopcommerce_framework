@@ -4,8 +4,10 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +16,7 @@ public class BasePage {
     public static BasePage getBasePage() {
         return new BasePage();
     }
+
     public void openUrl(WebDriver driver, String url) {
         driver.get(url);
     }
@@ -115,11 +118,7 @@ public class BasePage {
                 .until(ExpectedConditions.invisibilityOfElementLocated(getXpathLocator(locator)));
     }
 
-    public void waitForDynamicElementInvisible(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
-                .until(ExpectedConditions.invisibilityOfElementLocated(getXpathLocator(locator)));
-    }
-
+    // Dynamic locator
     public By getDynamicLocator(String locatorType) {
         By by = null;
         if (locatorType.startsWith("xpath") || locatorType.startsWith("XPATH")) {
@@ -158,7 +157,8 @@ public class BasePage {
     public String getTextOfDynamicElement(WebDriver driver, String locator) {
         return getDynamicElement(driver, locator).getText();
     }
-        public void waitForDynamicElementVisible(WebDriver driver, String locator) {
+
+    public void waitForDynamicElementVisible(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
                 .until(ExpectedConditions.visibilityOfElementLocated(getDynamicLocator(locator)));
     }
@@ -173,12 +173,49 @@ public class BasePage {
                 .until(ExpectedConditions.elementToBeClickable(getDynamicLocator(locator)));
     }
 
-    public String stringFormat(String locator, String... replaceText) {
-        String replaceLocator = String.format(locator, (Object[]) replaceText);
-        return replaceLocator;
+    public void waitForDynamicElementInvisible(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
+                .until(ExpectedConditions.invisibilityOfElementLocated(getDynamicLocator(locator)));
     }
 
-    public void clickToFormatElement(WebDriver driver, String locator, String replaceText) {
-        getDynamicElement(driver, stringFormat(locator, replaceText)).click();
+    // Rest parameter locator
+    public String restParameter(String locator, String... replaceText) {
+        return String.format(locator, (Object[]) replaceText);
+    }
+
+    public void sendTextToFormatElement(WebDriver driver, String locator, String valueText, String... replaceText) {
+        getDynamicElement(driver, restParameter(locator, replaceText)).sendKeys(valueText);
+
+    }
+
+    public String getFormatAttribute(WebDriver driver, String locator, String attributeName, String... replaceText) {
+        return getDynamicElement(driver, restParameter(locator, replaceText)).getDomAttribute(attributeName);
+    }
+
+    public boolean isDisplay(WebDriver driver, String locator, String... replaceText) {
+        return getDynamicElement(driver, restParameter(locator, replaceText)).isDisplayed();
+    }
+
+    public void clickToFormatElement(WebDriver driver, String locator, String... replaceText) {
+        getDynamicElement(driver, restParameter(locator, replaceText)).click();
+    }
+
+    public void waitForFormatElementVisible(WebDriver driver, String locator, String... replaceText) {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(getDynamicLocator(restParameter(locator, replaceText))));
+
+    }
+
+    public void waitForFormatElementClickable(WebDriver driver, String locator, String... replaceText) {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(getDynamicLocator(restParameter(locator, replaceText))));
+
+    }
+
+    public void pressKeyToElement(WebDriver driver, String locator, Keys key, String... replaceText) {
+        new Actions(driver).sendKeys(getDynamicElement(driver, restParameter(locator, replaceText)), key).perform();
+        
     }
 }

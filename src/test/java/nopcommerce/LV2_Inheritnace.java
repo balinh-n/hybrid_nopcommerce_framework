@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageUIs.users.HomePageUI;
-import pageUIs.users.RegisterPageUI;
+import pageUIs.nopcommerce.users.HomePageUI;
+import pageUIs.nopcommerce.users.RegisterPageUI;
 
 public class LV2_Inheritnace extends BasePage {
 
