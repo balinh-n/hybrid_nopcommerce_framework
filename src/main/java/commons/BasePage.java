@@ -11,6 +11,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageUIs.jquery.HomePageUI;
+
+
 public class BasePage {
 
     public static BasePage getBasePage() {
@@ -146,6 +149,10 @@ public class BasePage {
         return driver.findElement(getDynamicLocator(locator));
     }
 
+    public List<WebElement> getDynamicElements(WebDriver driver, String locator) {
+        return driver.findElements(getDynamicLocator(locator));
+    }
+
     public void clickToDynamicElement(WebDriver driver, String locator) {
         getDynamicElement(driver, locator).click();
     }
@@ -217,5 +224,19 @@ public class BasePage {
     public void pressKeyToElement(WebDriver driver, String locator, Keys key, String... replaceText) {
         new Actions(driver).sendKeys(getDynamicElement(driver, restParameter(locator, replaceText)), key).perform();
         
+    }
+
+    public void clearText(WebDriver driver, String locator, String... replaceText) {
+        getDynamicElement(driver, restParameter(locator, replaceText)).clear();
+    }
+
+    public void uploadFile(WebDriver driver, String... fileNames) {
+        String filePath = GlobalConstants.UploadFilePath;
+        String fullFileName = "";
+        for (String file : fileNames) {
+            fullFileName += filePath + file + "\n";
+        }
+        fullFileName = fullFileName.trim();
+        getDynamicElement(driver, HomePageUI.UPLOAD_BUTTON).sendKeys(fullFileName);
     }
 }

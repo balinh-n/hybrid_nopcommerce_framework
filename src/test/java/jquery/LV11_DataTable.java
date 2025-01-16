@@ -1,4 +1,4 @@
-package nopcommerce;
+package jquery;
 
 import java.time.Duration;
 
@@ -55,8 +55,22 @@ public class LV11_DataTable {
         homePage.refreshPage(driver);
     }
 
+    @Test
+    public void Table_03() {
+        // Delete a row
+        homePage.sendTextToTableHeader("Country", "Afghanistan");
+        homePage.clickDeleteRow("Afghanistan");
+        homePage.refreshPage(driver);
+
+        //Edit a data
+        homePage.clickEditButton("Afghanistan");
+        homePage.sendTextToEditBox("females", "10000");
+        homePage.clickOKButton();
+    }
+
     @AfterClass
     public void afterClass() {
         driver.close();
     }
 }
+ 

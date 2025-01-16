@@ -9,4 +9,8 @@ public class GlobalConstants {
     public static final String USERPASSWORD = "abcd1234";
     public static final String ADMINEMAIL = "admin@mystore.com";
     public static final String ADMINPASSWORD = "Abcd1234@";
+
+    public static final String File_path = System.getProperty("user.dir");
+    public static final String Seperator = System.getProperty("file.separator");
+    public static final String UploadFilePath = File_path + Seperator + "uploadfiles" + Seperator;
 }

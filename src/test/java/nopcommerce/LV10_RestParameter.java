@@ -32,15 +32,17 @@ public class LV10_RestParameter {
     }
 
     @Test
-    public void TC1_SwitchPage() {
+    public void TC1_RestParamter() {
         getLogInPage = getHomePage.clickDynamicLoginLink();
         getLogInPage.sendTextToDynamicEmail(GlobalConstants.USEREMAIL);
         getLogInPage.sendTextToDynamicPass(GlobalConstants.USERPASSWORD);
         getHomePage = getLogInPage.clickDynamicLogInButton();
         getCustomerInfoPage = getHomePage.clickDynamicMyAccountLink();
+        // ép kiểu
         getAddressPage = (AddressPageObject) getCustomerInfoPage.swithPage("Address");
         getCustomerInfoPage = (CustomerInfoPageObject) getAddressPage.swithPage("CustomerInfo");
 
+        // khởi tạo trực tiếp
         getCustomerInfoPage.switchPages("Address");
         getAddressPage = PageGenerateManager.getAddressPage(driver);
     }
