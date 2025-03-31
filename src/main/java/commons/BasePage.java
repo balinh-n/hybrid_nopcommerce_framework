@@ -11,9 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageUIs.jquery.HomePageUI;
-
-
 public class BasePage {
 
     public static BasePage getBasePage() {
@@ -99,6 +96,10 @@ public class BasePage {
 
     public int getElementSize(WebDriver driver, String locator) {
         return getListElement(driver, locator).size();
+    }
+
+    public void pressKey(WebDriver driver, Keys key) {
+        new Actions(driver).sendKeys(key).perform();
     }
 
     public void waitForElementVisible(WebDriver driver, String locator) {
@@ -223,20 +224,28 @@ public class BasePage {
 
     public void pressKeyToElement(WebDriver driver, String locator, Keys key, String... replaceText) {
         new Actions(driver).sendKeys(getDynamicElement(driver, restParameter(locator, replaceText)), key).perform();
-        
+
     }
 
     public void clearText(WebDriver driver, String locator, String... replaceText) {
         getDynamicElement(driver, restParameter(locator, replaceText)).clear();
     }
 
-    public void uploadFile(WebDriver driver, String... fileNames) {
-        String filePath = GlobalConstants.UploadFilePath;
+    public void uploadFile(WebDriver driver, String locator, String... fileNames) {
+        String filePath = GlobalConstants.UPLOAD_FILEPATH;
         String fullFileName = "";
         for (String file : fileNames) {
             fullFileName += filePath + file + "\n";
         }
         fullFileName = fullFileName.trim();
-        getDynamicElement(driver, HomePageUI.UPLOAD_BUTTON).sendKeys(fullFileName);
+        getDynamicElement(driver, locator).sendKeys(fullFileName);
+    }
+
+    public void sleepInSecond(int second) {
+        try {
+            Thread.sleep(second);
+        } catch (InterruptedException e) {
+            e.getMessage();
+        }
     }
 }

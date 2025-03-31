@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="LV5_SwitchRole" verbose="1" >
+<parameter name="userUrl" value="http://localhost:59580/"/>
+<parameter name="adminUrl" value="http://localhost:59580/login?ReturnUrl=%2Fadmin"/>
+  <test name="Testing in Chrome" >
+  <parameter name="browser" value="Chrome"/>
+    <classes>
+       <class name="nopcommerce.LV5_SwitchRole" />
+    </classes>
+  </test>
+
+   <test name="Testing in Firefox" >
+   <parameter name="browser" value="Firefox"/>
+    <classes>
+       <class name="nopcommerce.LV5_SwitchRole" />
+    </classes>
+  </test>
+
+   <test name="Testing in Edge" >
+   <parameter name="browser" value="Edge"/>
+    <classes>
+       <class name="nopcommerce.LV5_SwitchRole" />
+    </classes>
+  </test>
+</suite>
