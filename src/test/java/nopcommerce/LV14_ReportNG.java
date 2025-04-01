@@ -8,7 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.Nopcommerce.DynamicUser.*;
 
-public class LV13_Log4j2 extends BaseTest {
+public class LV14_ReportNG extends BaseTest {
     WebDriver driver;
     public DynamicHomePageObject homePage;
     public DynamicLogInPageObject loginPage;

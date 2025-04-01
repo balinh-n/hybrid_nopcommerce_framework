@@ -43,11 +43,10 @@ public class LV7_RestParameter extends BaseTest {
         getMyaccountPage = homePage.clickMyaccountLink();
         getAddressPage = (DynamicAddressPageObject) getMyaccountPage.clickDynamicTab("Addresses");
         getCustomerInfoPage = (DynamicCustomerInfoPageObject) getAddressPage.clickDynamicTab("Customer info");
-        
     }
 
     @AfterClass
     public void closeBrowser() {
-        driver.quit();
+        driver.close();
     }
 }
