@@ -24,7 +24,7 @@ public class MethodListener implements IInvokedMethodListener {
         log.debug("After invocation of " + method.getTestMethod().getMethodName());
         Reporter.setCurrentTestResult(result);
         if (method.isTestMethod()) {
-            VerificationFailures allFailures = VerificationFailures.getFailures();
+            VerificationOnFailures allFailures = VerificationOnFailures.getFailures();
 
             // Add an existing failure for the result to the failure list.
             if (result.getThrowable() != null) {

@@ -55,7 +55,7 @@ public class BaseTest {
             log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             status = false;
-            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            VerificationOnFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
             log.info("---------------------- Failed -----------------------");
         }
@@ -69,7 +69,7 @@ public class BaseTest {
             log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             status = false;
-            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            VerificationOnFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
             log.info("---------------------- Failed -----------------------");
         }
@@ -83,7 +83,7 @@ public class BaseTest {
             log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             status = false;
-            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            VerificationOnFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
             log.info("---------------------- Failed -----------------------");
         }
