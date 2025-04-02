@@ -104,10 +104,10 @@ public class BaseTest {
     @BeforeSuite
     public void deleteFileInReport() {
         // Remove all file in ReportNG screenshot (image)
-        deleteAllFileInFolder("reportNGImage");
+        deleteAllFileInFolder("ReportNGScreenShots");
 
         // Remove all file in Allure attachment (json file)
-        deleteAllFileInFolder("log");
+        deleteAllFileInFolder("logs");
     }
 
     public void deleteAllFileInFolder(String folderName) {

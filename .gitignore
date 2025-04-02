@@ -2,3 +2,7 @@
 /.idea
 /.vscode
 /logs
+/ReportNGScreenshots
+/test-output
+/html-allure
+/extentV5
