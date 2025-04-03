@@ -3,6 +3,7 @@ package pageObjects.Nopcommerce.DynamicUser;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import io.qameta.allure.Step;
 import pageUIs.Nopcommerce.DynamicUser.DynamicHomePageUI;
 
 public class DynamicHomePageObject extends BasePage {
@@ -12,6 +13,7 @@ public class DynamicHomePageObject extends BasePage {
         this.driver = driver;
     }
 
+    @Step("Open the register page")
     public DynamicRegisterPageObject clickRegisterLink() {
         waitForDynamicElementClickable(driver, DynamicHomePageUI.DYNAMIC_REGISTER_LINK);
         clickToDynamicElement(driver, DynamicHomePageUI.DYNAMIC_REGISTER_LINK);

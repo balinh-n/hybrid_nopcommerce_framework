@@ -1,14 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="LV15_ExtentReport" verbose="1">
+<suite name="LV16_AllureReport" verbose="1">
     <listeners>
         <listener class-name="commons.MethodListener" />
-        <listener class-name="reportConfigs.ExtentTestListener"/>
+        <listener class-name="reportConfigs.AllureTestListener"/>
     </listeners>
     <test name="Testing in Chrome">
         <parameter name="browser" value="Chrome" />
         <classes>
-            <class name="nopcommerce.LV15_ExtentReport" />
+            <class name="nopcommerce.LV16_AllureReport" />
         </classes>
     </test>
 

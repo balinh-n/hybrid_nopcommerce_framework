@@ -1,5 +1,7 @@
 package reportConfigs;
 
+import commons.BaseTest;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +9,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import commons.AbstractTest;
-import io.qameta.allure.Attachment;
-
-public class AllureTestListener implements ITestListener {
+public class AllureTestListener extends BaseTest implements ITestListener {
 
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
@@ -37,7 +36,7 @@ public class AllureTestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((AbstractTest) testClass).getDriver();
+        WebDriver driver = ((BaseTest) testClass).getDriver();
         saveScreenshotPNG(iTestResult.getName(), driver);
         saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
     }

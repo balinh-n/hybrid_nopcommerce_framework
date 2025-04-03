@@ -108,6 +108,7 @@ public class BaseTest {
 
         // Remove all file in Allure attachment (json file)
         deleteAllFileInFolder("logs");
+        deleteAllFileInFolder("allure-results");
     }
 
     public void deleteAllFileInFolder(String folderName) {
