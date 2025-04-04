@@ -10,4 +10,8 @@ public class GlobalConstants {
     public static final String UPLOAD_FILENAME = "uploadFiles";
     public static final String UPLOAD_FILEPATH = PROJECT_PATH + FILE_SEPERATOR + UPLOAD_FILENAME + FILE_SEPERATOR;
     public static final String JAVA_VERSION = System.getProperty("java.version");
+    public static final String JIRA_USERNAME = null;
+    public static final String JIRA_API_KEY = null;
+    public static final String JIRA_PROJECT_KEY = null;
+    public static final String JIRA_SITE_URL = null;
 }
