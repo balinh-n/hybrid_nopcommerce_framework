@@ -2,8 +2,10 @@ package commons;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -59,6 +61,16 @@ public class BasePage {
 
     public void sendTextToAlert(WebDriver driver, String valueText) {
         driver.switchTo().alert().sendKeys(valueText);
+    }
+
+    public Set<Cookie> getCookies(WebDriver driver) {
+        return driver.manage().getCookies();
+    }
+
+    public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+        for (Cookie cookie : cookies) {
+            driver.manage().addCookie(cookie);
+        }
     }
 
     public void waitForAlertPresent(WebDriver driver) {
