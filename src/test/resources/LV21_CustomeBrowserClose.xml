@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="LV20_ShareStateByCookies" verbose="1">
+    <listeners>
+        <!-- <listener class-name="commons.MethodListener" /> -->
+        <!-- <listener class-name="jiraConfigs.JiraListener" /> -->
+    </listeners>
+    <test name="Testing in Chrome">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="nopcommerce.LV21_CustomeCloseBrowser" />
+        </classes>
+    </test>
+
+    <!--   <test name="Testing in Firefox" >-->
+    <!--   <parameter name="browser" value="Firefox"/>-->
+    <!--    <classes>-->
+    <!-- <class name="nopcommerce.LogInNopcommerce" /> -->
+    <!--       <class name="jquery.LV20_ShareStateByCookies" />-->
+    <!--    </classes>-->
+    <!--  </test>-->
+
+    <!--   <test name="Testing in Edge" >-->
+    <!--   <parameter name="browser" value="Edge"/>-->
+    <!--    <classes>-->
+    <!-- <class name="nopcommerce.LogInNopcommerce"/> -->
+    <!--       <class name="jquery.LV20_ShareStateByCookies" />-->
+    <!--    </classes>-->
+    <!--  </test>-->
+</suite>

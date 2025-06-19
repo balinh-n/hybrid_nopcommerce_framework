@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="LV20_ShareStateByCookies" verbose="1">
+    <listeners>
+        <!-- <listener class-name="commons.MethodListener" /> -->
+        <!-- <listener class-name="jiraConfigs.JiraListener" /> -->
+    </listeners>
+    <test name="Testing in Chrome">
+        <parameter name="browser" value="Chrome" />
+        <classes>
+            <class name="nopcommerce.LV22_POJO" />
+        </classes>
+    </test>
+</suite>
