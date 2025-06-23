@@ -14,4 +14,5 @@ public class GlobalConstants {
     public static final String JIRA_API_KEY = null;
     public static final String JIRA_PROJECT_KEY = null;
     public static final String JIRA_SITE_URL = null;
+    public static final String RESOURCE_PATH = PROJECT_PATH + FILE_SEPERATOR + "src\\main\\resources" + FILE_SEPERATOR;
 }

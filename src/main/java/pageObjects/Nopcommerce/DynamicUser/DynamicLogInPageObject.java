@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUIs.Nopcommerce.DynamicUser.DynamicLogInPageUI;
+import testData.JsonReader;
 
 public class DynamicLogInPageObject extends BasePage {
     WebDriver driver;
@@ -25,6 +26,13 @@ public class DynamicLogInPageObject extends BasePage {
     public DynamicHomePageObject clickLogInButton() {
         waitForDynamicElementClickable(driver, DynamicLogInPageUI.DYNAMIC_LOGIN_BUTTON);
         clickToDynamicElement(driver, DynamicLogInPageUI.DYNAMIC_LOGIN_BUTTON);
+        return DynamicPageGenerateMange.getHomePage(driver);
+    }
+
+    public DynamicHomePageObject logInNopcommerce(JsonReader jsonReader) {
+        inputEmail(jsonReader.getEmail());
+        inputPassword(jsonReader.getPassword());
+        clickLogInButton();
         return DynamicPageGenerateMange.getHomePage(driver);
     }
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUIs.Nopcommerce.User.RegisterPageUI;
+import testData.UserInfo;
 
 public class RegisterPageObject extends BasePage {
     WebDriver driver;
@@ -88,5 +89,12 @@ public class RegisterPageObject extends BasePage {
         return getTextOfElement(driver, RegisterPageUI.REGISTER_SUCCESSFUL_MESSAGE);
     }
 
-    
+    public void registerPage(UserInfo userInfo) {
+        inputFirstName(userInfo.getFirstName());
+        inputLastName(userInfo.getLastName());
+        inputEmail(userInfo.getEmail());
+        inputPassword(userInfo.getPassword());
+        inputConfirmPassword(userInfo.getPassword());
+        clickRegisterButton();
+    }
 }

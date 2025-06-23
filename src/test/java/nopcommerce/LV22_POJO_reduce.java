@@ -16,7 +16,7 @@ import pageObjects.Nopcommerce.User.LogInPageObject;
 import pageObjects.Nopcommerce.User.RegisterPageObject;
 import testData.UserInfo;
 
-public class LV22_POJO extends BaseTest{
+public class LV22_POJO_reduce extends BaseTest{
     WebDriver driver;
     public HomePageObject homePage;
     public RegisterPageObject registerPage;
@@ -31,6 +31,7 @@ public class LV22_POJO extends BaseTest{
         userInfo.setFirstName("Jack");
         userInfo.setLastName("Sparrow");
         userInfo.setEmail(new Faker().internet().safeEmailAddress());
+        System.out.println(userInfo.getEmail());
         userInfo.setPassword("Abcd1234@");
     }
 
@@ -39,12 +40,7 @@ public class LV22_POJO extends BaseTest{
         homePage = new HomePageObject(driver);
         homePage.clickRegisterLink();
         registerPage = new RegisterPageObject(driver);
-        registerPage.inputFirstName(userInfo.getFirstName());
-        registerPage.inputLastName(userInfo.getLastName());
-        registerPage.inputEmail(userInfo.getEmail());
-        registerPage.inputPassword(userInfo.getPassword());
-        registerPage.inputConfirmPassword(userInfo.getPassword());
-        registerPage.clickRegisterButton();
+        registerPage.registerPage(userInfo);
         Assert.assertEquals("Your registration completed", registerPage.getRegisterMessage().trim());
         registerPage.clickContinueButton();
     }

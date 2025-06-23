@@ -6,10 +6,9 @@
         <!-- <listener class-name="jiraConfigs.JiraListener" /> -->
     </listeners>
     <test name="Testing in Chrome">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Chrome" />
         <classes>
-            <!-- <class name="nopcommerce.LV22_POJO"/> -->
-            <class name="nopcommerce.LV22_POJO_reduce"/>
+            <class name="nopcommerce.LV23_JsonReader" />
         </classes>
     </test>
 </suite>
