@@ -32,7 +32,10 @@ public class LV23_JsonReader extends BaseTest {
     @Test
     public void TC1_LogInWithValidAccount() {
         loginPage = homePage.clickLogInLink();
-        loginPage.logInNopcommerce(jsonReader);
+        loginPage.inputEmail(jsonReader.getEmail());
+        loginPage.inputPassword(jsonReader.getPassword());
+        loginPage.clickLogInButton();
+        // loginPage.logInNopcommerce(jsonReader);
     }
 
     @AfterClass
