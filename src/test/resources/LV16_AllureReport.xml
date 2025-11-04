@@ -2,7 +2,6 @@
 
 <suite name="LV16_AllureReport" verbose="1">
     <listeners>
-        <listener class-name="commons.MethodListener" />
         <listener class-name="reportConfigs.AllureTestListener"/>
     </listeners>
     <test name="Testing in Chrome">
@@ -11,18 +10,4 @@
             <class name="nopcommerce.LV16_AllureReport" />
         </classes>
     </test>
-
-    <!--   <test name="Testing in Firefox" >-->
-    <!--   <parameter name="browser" value="Firefox"/>-->
-    <!--    <classes>-->
-    <!--       <class name="jquery.LV14_ReportNG" />-->
-    <!--    </classes>-->
-    <!--  </test>-->
-
-    <!--   <test name="Testing in Edge" >-->
-    <!--   <parameter name="browser" value="Edge"/>-->
-    <!--    <classes>-->
-    <!--       <class name="jquery.LV14_ReportNG" />-->
-    <!--    </classes>-->
-    <!--  </test>-->
 </suite>

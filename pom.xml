@@ -161,7 +161,7 @@
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src\test\resources\LV23_JsonReader.xml</suiteXmlFile>
+                            <suiteXmlFile>src\test\resources\LV16_AllureReport.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                     <dependencies>
